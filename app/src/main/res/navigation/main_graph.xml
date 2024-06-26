@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/homeFragment"
+    android:id="@+id/main_graph">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.firebase.ui.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_homeFragment_to_platerFragment"
+            app:destination="@id/playerFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_CountriesFragment"
+            app:destination="@id/CountriesFragment" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/playerFragment"
+        android:name="com.example.firebase.ui.PlayerFragment"
+        android:label="PlayerFragment"
+        tools:layout="@layout/player">
+
+        <argument
+            android:name="RadioId"
+            app:argType="string"
+        />
+        <argument
+            android:name="UrlId"
+            app:argType="string"
+            />
+    </dialog>
+
+    <fragment
+        android:id="@+id/CountriesFragment"
+        android:name="com.example.firebase.ui.CountriesFragment"
+        android:label="CountriesFragment"
+        tools:layout="@layout/countries_fragment">
+        <action
+            android:id="@+id/action_CountriesFragment_to_CountriesDetails"
+            app:destination="@id/CountriesDetails" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/CountriesDetails"
+        android:name="com.example.firebase.ui.CountriesDetails"
+        android:label="CountriesDetails"
+        tools:layout="@layout/countries_details">
+        <argument
+            android:name="country"
+            app:argType="string"
+            />
+        <action
+            android:id="@+id/action_CountriesDetails_to_playerCoutriesFragment"
+            app:destination="@id/playerCoutriesFragment" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/playerCoutriesFragment"
+        android:name="com.example.firebase.ui.bottomsheatPlayer"
+        android:label="bottomsheatPlayer"
+        tools:layout="@layout/player_countries">
+
+        <argument
+            android:name="RadioId"
+            app:argType="string"
+            />
+        <argument
+            android:name="UrlId"
+            app:argType="string"
+            />
+    </dialog>
+
+</navigation>
