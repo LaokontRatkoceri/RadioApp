@@ -21,8 +21,6 @@ import retrofit2.http.Path
 import java.io.IOException
 
 interface ApiService {
-
-//    @Headers("x-rapidapi-key: " + "16feaa8b3cmshb8d3d42fc666b42p1aac15jsncc4452d539cc")
     @GET("json/stations/bycountry/Kosovo")
     fun getAllRadio(): Call<List<Radio>>
 
