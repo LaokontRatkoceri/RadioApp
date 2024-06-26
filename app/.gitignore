@@ -1,1 +1,4 @@
 /build
+
+# ignore ALL .json files
+*.json
